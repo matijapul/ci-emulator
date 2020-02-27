@@ -1,0 +1,13 @@
+- tenant:
+    name: core-tenant
+    source:
+      gerrit:
+        config-projects:
+          - zuul-config
+        untrusted-projects:
+          - proving-grounds
+      opendev.org:
+        untrusted-projects:
+          - zuul/zuul-jobs:
+              include:
+                - job
