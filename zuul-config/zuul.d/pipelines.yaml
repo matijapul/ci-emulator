@@ -3,6 +3,7 @@
     description: |
       Pipeline used for testing. Type retest in order to trigger.
     manager: independent
+    post-review: True
     require:
       gerrit:
         open: True
