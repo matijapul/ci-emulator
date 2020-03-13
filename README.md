@@ -1,5 +1,5 @@
 # CI emulator
-CI emulator will set up a local Zuul instance as your project gating system in combination with Gerrit for code review. Example from [Quick-Start Installation and Tutorial](https://zuul-ci.org/docs/zuul/tutorials/quick-start.html) was used as a basis for this emulator and is worth checking out if you want to learn more. This emulator is entirely self-contained and may be safely run on a workstation. 
+CI emulator will set up a local Zuul instance as your project gating system in combination with Gerrit for code review. Example from [Quick-Start Installation and Tutorial](https://zuul-ci.org/docs/zuul/tutorials/quick-start.html) was used as a basis for this emulator and is worth checking out if you want to learn more. This emulator is entirely self-contained and may be safely run on a workstation.
 
 The only requirements are a network connection and the ability to run Docker containers. It is also advised to use **Ubuntu (Bionic Beaver)** since it was used for development and testing of this emulator.
 
@@ -17,7 +17,7 @@ Once everything is up and running you should be able to access Gerrit here: http
 ## How to work with your local repository
 
  1. On the first run, you will have to create and set up a Gerrit user in order to clone the repository and commit code. This is covered in the **Add Your Gerrit Account** section of [Quick-Start Installation and Tutorial](https://zuul-ci.org/docs/zuul/tutorials/quick-start.html).
- 2. You can clone your local repositories using http (ssh doesn't work in this case) by executing `git clone http://localhost:8080/<repository_name>` such as `git clone http://localhost:8080/proving-grounds`.
+ 2. You can clone your local repositories using ssh by executing `git clone ssh://sshusername@localhost:29418/proving-grounds.git` (sshusername must match the username you set for your Gerrit user). Another option is to clone using http by executing `git clone http://localhost:8080/<repository_name>` such as `git clone http://localhost:8080/proving-grounds`.
  3. You can't directly merge your code to the master when pushing to Gerrit. Instead of pushing your commit with `git push` you can  instead stage your changes up for a review with `git review` (you will have to confirm the connection and specify the user on your first run). After that your change should appear on Gerrit.
  4. You will find all open changes here http://localhost:8080/q/status:open. In order for your change to merge it needs to get approved in these three categories:
 	 * **Code-Review** (approved by the reviewer, which means you)
